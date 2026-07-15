@@ -1035,9 +1035,10 @@ body.lightbox-open {
 .wave-demo {
   position: relative;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   height: clamp(16rem, 48vw, 34rem);
   overflow: hidden;
+  max-width: 1280px;
 }
 
 .wave-demo__caption {
