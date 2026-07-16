@@ -1723,6 +1723,7 @@ body.lightbox-open {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 
@@ -1741,7 +1742,7 @@ body.lightbox-open {
 }
 
 .email-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   font-family: var(--font-heading);
