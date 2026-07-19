@@ -598,7 +598,7 @@ body.lightbox-open {
 }
 
 .hero__subtitle {
-  color: var(--color-muted-foreground);
+  color: var(--color-foreground);
   line-height: 1.625;
   margin-bottom: 2.25rem;
   font-size: 1rem;
@@ -638,6 +638,7 @@ body.lightbox-open {
 .btn-outline {
   display: inline-block;
   color: var(--color-foreground);
+  background-color: var(--color-card);
   font-family: var(--font-heading);
   font-size: 0.875rem;
   font-weight: 600;
@@ -668,7 +669,7 @@ body.lightbox-open {
 }
 
 .hero__stat-label {
-  color: var(--color-muted-foreground);
+  color: var(--color-foreground);
   font-size: 0.75rem;
 }
 
@@ -684,7 +685,7 @@ body.lightbox-open {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 253, 248, 0.88) 0%, rgba(255, 253, 248, 0.7) 100%);
+  background: linear-gradient(135deg, rgba(255, 253, 248, 0.65) 0%, rgba(255, 253, 248, 0.6) 100%);
   z-index: 1;
 }
 
