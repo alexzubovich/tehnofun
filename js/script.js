@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  document.documentElement.classList.add('js');
+
   /* ---- Smooth scroll ---- */
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
@@ -328,6 +330,29 @@
       waveObserver.observe(waveDemo);
     } else {
       startWaveAnimation();
+    }
+  }
+
+  /* ---- Process steps zigzag reveal ---- */
+  var processBoard = document.querySelector('.process-board');
+  if (processBoard) {
+    var processRevealed = false;
+
+    function revealProcessSteps() {
+      if (processRevealed) return;
+      processRevealed = true;
+      processBoard.classList.add('is-revealed');
+    }
+
+    if ('IntersectionObserver' in window) {
+      var processObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) revealProcessSteps();
+        });
+      }, { threshold: 0.2 });
+      processObserver.observe(processBoard);
+    } else {
+      revealProcessSteps();
     }
   }
 })();
