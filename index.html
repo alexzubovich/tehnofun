@@ -44,7 +44,7 @@
       <a href="#gallery" class="mobile-nav__link">Фотогалерея</a>
       <a href="#how" class="mobile-nav__link">Схема работы</a>
       <a href="#reviews" class="mobile-nav__link">Отзывы</a>
-      <a href="#contacts" class="btn-contact">Связаться</a>
+      <!-- a href="#contacts" class="btn-contact">Связаться</a -->
     </nav>
   </header>
 
@@ -428,7 +428,7 @@
         <div class="process-board">
           <!-- Desktop zigzag -->
           <div class="process-grid">
-            <article class="process-step process-step--right">
+            <article class="process-step process-step--right" data-process-order="1">
               <div class="process-step__inner">
                 <div class="process-badge process-badge--left process-badge--orange" aria-hidden="true">1</div>
                 <div class="process-card process-card--orange">
@@ -446,7 +446,7 @@
               </div>
             </article>
 
-            <article class="process-step process-step--left">
+            <article class="process-step process-step--left" data-process-order="2">
               <div class="process-step__inner">
                 <div class="process-badge process-badge--right process-badge--sky" aria-hidden="true">2</div>
                 <div class="process-card process-card--sky">
@@ -467,7 +467,7 @@
               </div>
             </article>
 
-            <article class="process-step process-step--right">
+            <article class="process-step process-step--right" data-process-order="4">
               <div class="process-step__inner">
                 <div class="process-badge process-badge--left process-badge--pink" aria-hidden="true">4</div>
                 <div class="process-card process-card--pink">
@@ -485,7 +485,7 @@
               </div>
             </article>
 
-            <article class="process-step process-step--left">
+            <article class="process-step process-step--left" data-process-order="3">
               <div class="process-step__inner">
                 <div class="process-badge process-badge--right process-badge--purple" aria-hidden="true">3</div>
                 <div class="process-card process-card--purple">
@@ -506,7 +506,7 @@
 
           <!-- Mobile vertical -->
           <div class="process-mobile">
-            <article class="process-mobile__item">
+            <article class="process-mobile__item" data-process-order="1">
               <div class="process-mobile__connector" aria-hidden="true"><svg width="8" height="56" viewBox="0 0 8 56"><path d="M4 0 Q0 14, 4 28 Q8 42, 4 56" stroke="#e5e7eb" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="4 6"/></svg></div>
               <div class="process-mobile__row">
                 <div class="process-mobile__badge process-badge--orange">1</div>
@@ -518,7 +518,7 @@
                 </div>
               </div>
             </article>
-            <article class="process-mobile__item">
+            <article class="process-mobile__item" data-process-order="2">
               <div class="process-mobile__connector" aria-hidden="true"><svg width="8" height="56" viewBox="0 0 8 56"><path d="M4 0 Q0 14, 4 28 Q8 42, 4 56" stroke="#e5e7eb" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="4 6"/></svg></div>
               <div class="process-mobile__row">
                 <div class="process-mobile__badge process-badge--sky">2</div>
@@ -530,7 +530,7 @@
                 </div>
               </div>
             </article>
-            <article class="process-mobile__item">
+            <article class="process-mobile__item" data-process-order="3">
               <div class="process-mobile__connector" aria-hidden="true"><svg width="8" height="56" viewBox="0 0 8 56"><path d="M4 0 Q0 14, 4 28 Q8 42, 4 56" stroke="#e5e7eb" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="4 6"/></svg></div>
               <div class="process-mobile__row">
                 <div class="process-mobile__badge process-badge--purple">3</div>
@@ -542,7 +542,7 @@
                 </div>
               </div>
             </article>
-            <article class="process-mobile__item">
+            <article class="process-mobile__item" data-process-order="4">
               <div class="process-mobile__row">
                 <div class="process-mobile__badge process-badge--pink">4</div>
                 <div class="process-mobile__card process-card--pink">
