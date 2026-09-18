@@ -776,7 +776,7 @@ body.lightbox-open {
 }
 
 .tagline-card__text {
-  color: var(--color-white);
+  color: var(--color-muted-foreground);
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
