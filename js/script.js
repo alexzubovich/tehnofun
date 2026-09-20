@@ -78,73 +78,37 @@
   });
 
   /* ---- Testimonials slider ---- */
-  var testimonials = [
-    {
-      text: 'Заказывали оборудование для корпоратива на 80 человек. Всё было на высшем уровне — привезли вовремя, установили быстро, а сами гаджеты стали изюминкой вечера! Гости до сих пор вспоминают интерактивные конкурсы. Спасибо команде Технофан!',
-      name: 'Анна Ковалёва',
-      position: 'Организатор мероприятий',
-      photo: 'images/testimonial-1.jpg'
-    },
-    {
-      text: 'Ребята помогли организовать день рождения дочери. Детям очень понравился счётчик прикосновений и датчик движения — устроили целые соревнования! Ведущий работал профессионально, а оборудование работало без сбоев. Рекомендую всем!',
-      name: 'Дмитрий Соколов',
-      position: 'Довольный отец',
-      photo: 'images/testimonial-2.jpg'
-    },
-    {
-      text: 'Наша свадьба стала незабываемой благодаря Технофану! Оборудование добавило столько веселья и эмоций, что гости танцевали и участвовали в конкурсах весь вечер. Фотозона с реквизитом — отдельная любовь, получились потрясающие снимки!',
-      name: 'Екатерина Новикова',
-      position: 'Невеста',
-      photo: 'images/testimonial-3.jpg'
-    },
-    {
-      text: 'Обращались для организации выпускного. Технофан предложили несколько вариантов программы, помогли с выбором гаджетов. В итоге получился современный и динамичный праздник. Ребята работают с душой, чувствуется!',
-      name: 'Максим Петров',
-      position: 'Учитель',
-      photo: 'images/testimonial-4.jpg'
-    },
-    {
-      text: 'Искали что-то необычное для корпоратива — Технофан превзошли все ожидания! Измеритель шума превратил обычные конкурсы в настоящее шоу. Коллеги были в восторге, а мы получили отличные отзывы от руководства. Обязательно обратимся снова!',
-      name: 'Ольга Смирнова',
-      position: 'HR-менеджер',
-      photo: 'images/testimonial-5.jpg'
-    }
-  ];
-
+  var testimonialCards = Array.from(document.querySelectorAll('[data-testimonial]'));
   var testimonialIndex = 0;
-  var testimonialText = document.getElementById('testimonial-text');
-  var testimonialName = document.getElementById('testimonial-name');
-  var testimonialPosition = document.getElementById('testimonial-position');
-  var testimonialPhoto = document.getElementById('testimonial-photo');
   var testimonialCurrent = document.getElementById('testimonial-current');
   var testimonialTotal = document.getElementById('testimonial-total');
-  var testimonialCard = document.getElementById('testimonial-card');
 
   function renderTestimonial(index) {
-    var item = testimonials[index];
-    if (!item || !testimonialText) return;
-    testimonialCard.classList.add('is-changing');
+    var visibleCard = testimonialCards.find(function (card) { return !card.hidden; });
+    if (!testimonialCards[index]) return;
+
+    if (visibleCard) visibleCard.classList.add('is-changing');
+
     setTimeout(function () {
-      testimonialText.textContent = item.text;
-      testimonialName.textContent = item.name;
-      testimonialPosition.textContent = item.position;
-      testimonialPhoto.src = item.photo;
-      testimonialPhoto.alt = item.name;
-      testimonialCurrent.textContent = index + 1;
-      testimonialTotal.textContent = testimonials.length;
-      testimonialCard.classList.remove('is-changing');
+      testimonialCards.forEach(function (card, i) {
+        card.hidden = i !== index;
+        card.classList.remove('is-changing');
+      });
+      if (testimonialCurrent) testimonialCurrent.textContent = index + 1;
     }, 150);
   }
 
-  if (testimonialTotal) testimonialTotal.textContent = testimonials.length;
+  if (testimonialTotal) testimonialTotal.textContent = testimonialCards.length;
 
   document.getElementById('testimonial-prev')?.addEventListener('click', function () {
-    testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
+    if (!testimonialCards.length) return;
+    testimonialIndex = (testimonialIndex - 1 + testimonialCards.length) % testimonialCards.length;
     renderTestimonial(testimonialIndex);
   });
 
   document.getElementById('testimonial-next')?.addEventListener('click', function () {
-    testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+    if (!testimonialCards.length) return;
+    testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
     renderTestimonial(testimonialIndex);
   });
 
